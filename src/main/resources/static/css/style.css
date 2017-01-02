@@ -1,8 +1,13 @@
-.navbar-brand{
+.navbar-brand {
 	padding-top: 12px;
 }
 
-.panel-default{
+.panel-default {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.alert {
 	margin-left: 10px;
 	margin-right: 10px;
 }
