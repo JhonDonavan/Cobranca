@@ -37,6 +37,9 @@ public class TituloController {
 		return mv;
 	}
 	
+	
+	//retorna uma lista de opçaoes cadastradas na classe ENUM StatusTitulo para 
+	//preenchimento dinamico do campo status na tela Cadastro de titulos
 	@ModelAttribute("todosStatusTitulos")
 	public StatusTitulo[] todosStatusTitulos(){
 		return StatusTitulo.values();
