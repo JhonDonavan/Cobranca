@@ -24,7 +24,8 @@
 
 	<form class="form-horizontal" method="POST" action="/titulos">
 
-		<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagen)}">
+		<div class="alert alert-success"
+			th:if="${!#strings.isEmpty(mensagen)}">
 			<span th:text="${mensagen}">Titulo cadastrado com sucesso!!!</span>
 		</div>
 
@@ -62,8 +63,7 @@
 					<label for="status" class="col-sm-2 control-label">Status</label>
 					<div class="col-sm-2">
 						<select class="form-control" name="status">
-							<option value="PENDENTE">Pendente</option>
-							<option value="RECEBIDO">Recebido</option>
+							<option th:each="status : ${todosStatusTitulos}" th:value="${status}" th:text="${status.descricao}"></option>
 						</select>
 					</div>
 				</div>
