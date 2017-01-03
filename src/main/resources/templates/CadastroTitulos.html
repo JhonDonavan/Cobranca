@@ -1,29 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
 <head>
-<meta charset="UTF-8"></meta>
-<title>Cadastro de titulo</title>
-
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
-
+	<title>Cadastro de titulo</title>
 </head>
-<body>
 
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"> <!-- <img alt="Brand" src="..."/> -->
-					<span>LOGO</span>
-				</a>
-			</div>
-		</div>
-	</nav>
-
-
+<section layout:fragment="conteudo">
 	<form class="form-horizontal" method="POST" action="/titulos">
-
 		<div class="alert alert-success"
 			th:if="${!#strings.isEmpty(mensagen)}">
 			<span th:text="${mensagen}">Titulo cadastrado com sucesso!!!</span>
@@ -31,7 +16,10 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2 class="panel-title">Novo título</h2>
+				<div class="clearfix">
+				<h1 class="panel-title jd-titulo-panel">Novo título</h1>
+				<a class="btm btn-link jd-link-panel" href="/titulos">Voltar para pesquisa</a>
+			</div>
 			</div>
 
 			<div class="panel-body">
@@ -78,10 +66,5 @@
 
 		</div>
 	</form>
-
-
-	<script src="/js/jquery-3.1.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-
-</body>
+</section>
 </html>

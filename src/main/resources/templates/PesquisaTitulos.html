@@ -1,52 +1,41 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+
 
 <head>
-<meta charset="UTF-8"></meta>
 <title>Pesquisa de titulose</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 
-<body>
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"> <!-- <img alt="Brand" src="..."/> -->
-					<span>LOGO</span>
-				</a>
-			</div>
-		</div>
-	</nav>
-
+<section layout:fragment="conteudo">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h1 class="panel-title">Pesquisa de titulos</h1>
+			<div class="clearfix">
+				<h1 class="panel-title jd-titulo-panel">Pesquisa de titulos</h1>
+				<a class="btm btn-link jd-link-panel" href="/titulos/novo">Novo título</a>
+			</div>
+		</div>
+		<div class="panel-body">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th class="text-center col-md-1">#</th>
+						<th>Descrição</th>
+						<th class="text-center col-md-3">Data de vencimento</th>
+						<th class="text-center col-md-2">Valor</th>
+						<th class="col-md-1"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="6">Nenhum tirulo foi encontrado</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
-
-	<div class="panel-body">
-		<table class="table table-bordered table-striped">
-			<thead>
-				<tr>
-					<th class="text-center col-md-1">#</th>
-					<th>Descrição</th>
-					<th class="text-center col-md-3">Data de vencimento</th>
-					<th class="text-center col-md-2">Valor</th>
-					<th class="col-md-1"></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td colspan="6">Nenhum tirulo foi encontrado</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
-	<script src="/js/jquery-3.1.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-</body>
+</section>
 
 </html>
