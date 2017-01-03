@@ -28,7 +28,7 @@ public class Titulo {
 	@Temporal(TemporalType.DATE)
 	private Date dataVencimento;
 	
-	@NumberFormat(pattern = "0.00")
+	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valor;
 	
 	@Enumerated(EnumType.STRING)
@@ -74,6 +74,10 @@ public class Titulo {
 
 	public void setStatus(StatusTitulo status) {
 		this.status = status;
+	}
+	
+	public boolean isPendente(){
+		return StatusTitulo.PENDENTE.equals(this.status);
 	}
 
 	@Override
