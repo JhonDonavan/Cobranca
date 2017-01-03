@@ -34,6 +34,11 @@ public class TituloController {
 		return mv;
 	}
 	
+	@RequestMapping
+	public String pesquisar(){
+		return "PesquisaTitulos";
+	}
+	
 	
 	//retorna uma lista de opçaoes cadastradas na classe ENUM StatusTitulo para 
 	//preenchimento dinamico do campo status na tela Cadastro de titulos
