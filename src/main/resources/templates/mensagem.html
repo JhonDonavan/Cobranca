@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+
+<!--Exibe mensagem de sucesso ao cadastrar  -->
+<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagen)}">
+	<span th:text="${mensagen}">Titulo cadastrado com sucesso!!!</span>
+</div>
+
+<!--Exibem mensagens de erros  -->
+<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+	<div th:each="erros : ${#fields.detailedErrors()}">
+		<span th:text="${erros.message}"></span>
+	</div>
+</div>
+
+
+</html>
