@@ -23,9 +23,9 @@ public class TituloController {
 	@Autowired
 	private Titulos titulos;
 
-	@RequestMapping("/novo")
+	@RequestMapping("novo")
 	public ModelAndView novo() {
-		ModelAndView mv = new ModelAndView("CadastroTitulos");
+		ModelAndView mv = new ModelAndView("Titulo/CadastroTitulos");
 		mv.addObject(new Titulo());
 		return mv;
 	}
@@ -33,7 +33,7 @@ public class TituloController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String salvar(@Validated Titulo titulo, Errors erros, RedirectAttributes attributes) {
 		if (erros.hasErrors()) {
-			return "CadastroTitulos";
+			return "Titulo/CadastroTitulos";
 		}
 
 		titulos.save(titulo);
@@ -44,7 +44,7 @@ public class TituloController {
 	@RequestMapping
 	public ModelAndView pesquisar() {
 		List<Titulo> TodosTitulos = titulos.findAll();
-		ModelAndView mv = new ModelAndView("PesquisaTitulos");
+		ModelAndView mv = new ModelAndView("Titulo/PesquisaTitulos");
 		mv.addObject("titulos", TodosTitulos);
 		return mv;
 	}

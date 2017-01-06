@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="LayoutPadrao">
+	layout:decorator="Padrao/LayoutPadrao">
 <head>
 <title>Cadastro de titulo</title>
 </head>
@@ -12,7 +12,7 @@
 	<form class="form-horizontal" method="POST" action="/titulos"
 		th:object="${titulo}">
 
-		<div layout:include="mensagem"></div>
+		<div layout:include="Padrao/mensagem"></div>
 
 
 		<div class="panel panel-default">
