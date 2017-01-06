@@ -40,7 +40,7 @@ public class TituloController {
 		attributes.addFlashAttribute("mensagen", "Titulo salvo com sucesso");
 		return "redirect:/titulos/novo";
 	}
-
+	//teste
 	@RequestMapping
 	public ModelAndView pesquisar() {
 		List<Titulo> TodosTitulos = titulos.findAll();
