@@ -11,10 +11,23 @@
 <body>
 
 	<header layout:include="Padrao/Cabecalho"></header>
+
 	
-	<section layout:fragment="conteudo">
-	<p>Conteudo principal</p>
-	</section>
+		<div class="col-sm-1 jd-nav-lateral-col01">
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation"><a class="btn btn-default" href="/">HOME</a></li>
+				<li role="presentation"><a class="btn btn-default"
+					href="/titulos">TÍTULOS</a></li>
+				<li role="presentation"><a class="btn btn-default" href="#">Messages</a></li>
+			</ul>
+		</div>
+
+		<div class="col-sm-11 jd-nav-lateral-col11">
+			<section layout:fragment="conteudo">
+				<p>Conteudo principal</p>
+			</section>
+		</div>
+	
 
 
 	<script src="/js/jquery-3.1.1.min.js"></script>
