@@ -1,24 +1,45 @@
 package com.cobranca.model;
 
+import java.util.Date;
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+
+
+@Entity
 public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message="Campo nome é obrigatório!")
+	@Size(max=40, message="O campo nome nao pode conter mais de 40 caracteres")
 	private String nome;
 	
-	private int dataNascimento;
-	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
+	@NotNull(message="O campo data de nascimento é obrigatório!")
+	private Date dataNascimento;
+
+	@NotEmpty(message="Campo endereço é obrigatório!")
+	@Size(max=40, message="O campo nome nao pode conter mais de 40 caracteres")
 	private String endereco;
 	
-	private long cel;
+	@NotEmpty(message="Campo Celular é obrigatório!")
+	private String cel;
 	
-	private long tel;
+	
+	private String tel;
 
 	public Long getId() {
 		return id;
@@ -36,11 +57,11 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public int getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(int dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -52,19 +73,19 @@ public class Cliente {
 		this.endereco = endereco;
 	}
 
-	public long getCel() {
+	public String getCel() {
 		return cel;
 	}
 
-	public void setCel(long cel) {
+	public void setCel(String cel) {
 		this.cel = cel;
 	}
 
-	public long getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(long tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
