@@ -26,6 +26,9 @@
 				</div>
 
 				<div class="panel-body">
+
+					<input type="hidden" th:field="*{id}" />
+
 					<div class="form-group"
 						th:classappend="${#fields.hasErrors('nome')} ? has-error">
 						<label for="nome" class="col-sm-2 control-label">Nome</label>
@@ -55,7 +58,8 @@
 						</div>
 					</div>
 
-					<div class="form-group" th:classappend="${#fields.hasErrors('cel')} ? has-error">
+					<div class="form-group"
+						th:classappend="${#fields.hasErrors('cel')} ? has-error">
 						<label for="cel" class="col-sm-2 control-label">Celular</label>
 						<div class="col-sm-2">
 							<input type="text" class="form-control" id="cel"
@@ -63,7 +67,8 @@
 						</div>
 					</div>
 
-					<div class="form-group" th:classappend="${#fields.hasErrors('tel')} ? has-error">
+					<div class="form-group"
+						th:classappend="${#fields.hasErrors('tel')} ? has-error">
 						<label for="tel" class="col-sm-2 control-label">Telefone
 							residencial</label>
 						<div class="col-sm-2">

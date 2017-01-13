@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -46,5 +47,14 @@ public class ClienteController {
 		mv.addObject("clientes", todosClientes);
 		return mv;
 	}
+	
+	@RequestMapping("{id}")
+	public ModelAndView edicao(@PathVariable("id") Cliente cliente){
+		ModelAndView mv = new ModelAndView("Cliente/Cadastrocliente");
+		mv.addObject(cliente);
+		return mv;
+		
+	}
+	
 
 }

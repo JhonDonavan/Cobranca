@@ -40,7 +40,7 @@
 							th:text="${titulo.status.descricao}"
 							th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
 						</td>
-						<td class="text-center"><a class="btn btn-link btn-xs"> <span
+						<td class="text-center"><a class="btn btn-link btn-xs" th:href="@{/titulos/{id}(id=${titulo.id})}"> <span
 								class="glyphicon glyphicon-pencil"></span>
 						</a> <a class="btn btn-link btn-xs"> <span
 								class="glyphicon glyphicon-ok-circle"></span>

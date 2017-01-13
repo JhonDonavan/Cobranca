@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -47,6 +48,16 @@ public class TituloController {
 		ModelAndView mv = new ModelAndView("Titulo/PesquisaTitulos");
 		mv.addObject("titulos", TodosTitulos);
 		return mv;
+	}
+	
+	@RequestMapping("{id}")
+	public ModelAndView edicao(@PathVariable Long id){
+		Titulo titulo = titulos.findOne(id);
+		
+		ModelAndView mv = new ModelAndView("Titulo/CadastroTitulos");
+		mv.addObject(titulo);
+		return mv;
+		
 	}
 
 	// retorna uma lista de opçaoes cadastradas na classe ENUM StatusTitulo para
