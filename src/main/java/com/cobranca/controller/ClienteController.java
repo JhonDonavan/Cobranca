@@ -48,6 +48,9 @@ public class ClienteController {
 		return mv;
 	}
 	
+	//OBS: O spring entende que se passar uma variavel ele interpreta que voce quer localizar o objeto
+	//sendo assim, não ha necessidade desta forma codificada abaixo de usar FindAll do JPA.
+	//Passando  "id" e declarando o objeto ele faz automaticamente
 	@RequestMapping("{id}")
 	public ModelAndView edicao(@PathVariable("id") Cliente cliente){
 		ModelAndView mv = new ModelAndView("Cliente/Cadastrocliente");

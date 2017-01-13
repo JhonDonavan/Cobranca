@@ -27,6 +27,8 @@
 
 				<div class="panel-body">
 
+					<!--campo nao visivel para enviar ao controller  o id, caso o id seja null
+					  sera criado um novo objeto, canso nao seja null, objeto será recuperado e alterado.-->
 					<input type="hidden" th:field="*{id}" />
 
 					<div class="form-group"
