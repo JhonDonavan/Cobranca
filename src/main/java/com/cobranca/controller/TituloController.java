@@ -41,7 +41,7 @@ public class TituloController {
 		attributes.addFlashAttribute("mensagen", "Titulo salvo com sucesso");
 		return "redirect:/titulos/novo";
 	}
-	
+
 	@RequestMapping
 	public ModelAndView pesquisar() {
 		List<Titulo> TodosTitulos = titulos.findAll();
@@ -49,15 +49,20 @@ public class TituloController {
 		mv.addObject("titulos", TodosTitulos);
 		return mv;
 	}
-	
+
 	@RequestMapping("{id}")
-	public ModelAndView edicao(@PathVariable Long id){
+	public ModelAndView edicao(@PathVariable Long id) {
 		Titulo titulo = titulos.findOne(id);
-		
+
 		ModelAndView mv = new ModelAndView("Titulo/CadastroTitulos");
 		mv.addObject(titulo);
 		return mv;
-		
+	}
+
+	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long id) {
+		titulos.delete(id);
+		return "redirect:/titulos";
 	}
 
 	// retorna uma lista de opçaoes cadastradas na classe ENUM StatusTitulo para

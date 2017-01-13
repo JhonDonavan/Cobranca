@@ -40,12 +40,14 @@
 							th:text="${titulo.status.descricao}"
 							th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
 						</td>
-						<td class="text-center"><a class="btn btn-link btn-xs" th:href="@{/titulos/{id}(id=${titulo.id})}"> <span
+						<td class="text-center"><a class="btn btn-link btn-xs"
+							th:href="@{/titulos/{id}(id=${titulo.id})}"> <span
 								class="glyphicon glyphicon-pencil"></span>
 						</a> <a class="btn btn-link btn-xs"> <span
 								class="glyphicon glyphicon-ok-circle"></span>
-						</a> <a class="btn btn-link btn-xs"> <span
-								class="glyphicon glyphicon-ban-circle"></span>
+						</a> <a class="btn btn-link btn-xs" data-toggle="modal"
+							data-target="#confirmacaoExclusaoModal"> <span
+								class="glyphicon glyphicon-remove-circle"></span>
 						</a></td>
 					</tr>
 					<tr>
@@ -55,6 +57,9 @@
 				</tbody>
 			</table>
 		</div>
+
+		<div layout:include="/Padrao/ConfirmacaoExclusao"></div>
+
 	</div>
 </section>
 

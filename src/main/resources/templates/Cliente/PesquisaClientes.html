@@ -41,11 +41,15 @@
 						<td class="text-right" th:text="${{cliente.endereco}}|"></td>
 						<td class="text-right" th:text="${{cliente.cel}}|"></td>
 						<td class="text-right" th:text="${{cliente.tel}}|"></td>
-						<td class="text-center"><a class="btn btn-link btn-xs" th:href="@{/clientes/{id}(id=${cliente.id})}"> <span
-							class="glyphicon glyphicon-pencil"></span>
-						</a><a class="btn btn-link btn-xs"> <span
-							   class="glyphicon glyphicon-ban-circle"></span>
-						</a></td>
+						<td class="text-center">
+							<a class="btn btn-link btn-xs"
+								th:href="@{/clientes/{id}(id=${cliente.id})}"> <span
+									class="glyphicon glyphicon-pencil"></span>
+							</a>
+							<a class="btn btn-link btn-xs"> <span
+									class="glyphicon glyphicon-ban-circle"></span>
+							</a>
+						</td>
 					</tr>
 				</tbody>
 			</table>
