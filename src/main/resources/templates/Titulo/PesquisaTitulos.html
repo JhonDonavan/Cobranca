@@ -43,11 +43,13 @@
 						<td class="text-center"><a class="btn btn-link btn-xs"
 							th:href="@{/titulos/{id}(id=${titulo.id})}"> <span
 								class="glyphicon glyphicon-pencil"></span>
-						</a> <a class="btn btn-link btn-xs"> <span
-								class="glyphicon glyphicon-ok-circle"></span>
-						</a> <a class="btn btn-link btn-xs" data-toggle="modal"
-							data-target="#confirmacaoExclusaoModal"> <span
-								class="glyphicon glyphicon-remove-circle"></span>
+						</a> 
+						<a class="btn btn-link btn-xs"> <span
+								class="glyphicon glyphicon-ok"></span>
+						</a> 
+						<a class="btn btn-link btn-xs" data-toggle="modal"
+							data-target="#confirmacaoExclusaoModal" th:attr="data-codigo=${titulo.id}"> <span
+								class="glyphicon glyphicon-remove"></span>
 						</a></td>
 					</tr>
 					<tr>
