@@ -1,8 +1,9 @@
-$("#confirmacaoExclusaoModal").on('show.bs.modal', function(event) {
+$('#confirmacaoExclusaoModal').on('show.bs.modal', function(event) {
 	
 	var button = $(event.relatedTarget);
 	
 	var idTitulo = button.data('codigo');
+	var descricaoTitulo = button.data('descricao');
 	
 	var modal = $(this);
 	var form = modal.find('form');
@@ -12,5 +13,7 @@ $("#confirmacaoExclusaoModal").on('show.bs.modal', function(event) {
 		action += '/';
 	}
 	form.attr('action', action + idTitulo);
+	
+	modal.find('.modal-body span').html('Tem certeza que deseja excluir o titulo de <strong>' + descricaoTitulo + '<strong/>?');
 	
 });
