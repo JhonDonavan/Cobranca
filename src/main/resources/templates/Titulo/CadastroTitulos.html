@@ -12,7 +12,8 @@
 	<form class="form-horizontal" method="POST" action="/titulos"
 		th:object="${titulo}">
 
-		<div layout:include="Padrao/mensagem"></div>
+		<div layout:include="Padrao/mensagemGeral"></div>
+		<div layout:include="Padrao/mensagemErro"></div>
 
 
 		<div class="panel panel-default">

@@ -1,4 +1,4 @@
-$('#confirmacaoExclusaoModal').on('show.bs.modal', function(event) {
+$('#confirmacaoExclusaoModalTitulo').on('show.bs.modal', function(event) {
 	
 	var button = $(event.relatedTarget);
 	
@@ -7,7 +7,7 @@ $('#confirmacaoExclusaoModal').on('show.bs.modal', function(event) {
 	
 	var modal = $(this);
 	var form = modal.find('form');
-	var action = form.attr('action');
+	var action = form.data('url-base');
 	
 	if(!action.endsWith('/')){
 		action += '/';

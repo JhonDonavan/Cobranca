@@ -4,10 +4,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="Padra/LayoutPadrao">
 
-<!--Exibe mensagem de sucesso ao cadastrar  -->
-<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagen)}">
-	<span th:text="${mensagen}"></span>
-</div>
+
 
 <!--Exibem mensagens de erros  -->
 <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">

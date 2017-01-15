@@ -60,8 +60,9 @@ public class TituloController {
 	}
 
 	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-	public String excluir(@PathVariable Long id) {
+	public String excluir(@PathVariable Long id, RedirectAttributes attributes) {
 		titulos.delete(id);
+		attributes.addFlashAttribute("mensagen", "Titulo excluido com sucesso");
 		return "redirect:/titulos";
 	}
 
