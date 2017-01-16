@@ -1,7 +1,5 @@
 //exclusao de titulos
-$('#confirmacaoExclusaoModalTitulo').on(
-		'show.bs.modal',
-		function(event) {
+$('#confirmacaoExclusaoModalTitulo').on('show.bs.modal', function(event) {
 
 			var button = $(event.relatedTarget);
 
@@ -23,9 +21,7 @@ $('#confirmacaoExclusaoModalTitulo').on(
 		});
 
 // exclusao de clientes
-$('#confirmacaoExclusaoModalCliente').on(
-		'show.bs.modal',
-		function(event) {
+$('#confirmacaoExclusaoModalCliente').on('show.bs.modal', function(event) {
 
 			var button = $(event.relatedTarget);
 

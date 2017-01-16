@@ -36,7 +36,7 @@ public class ClienteController {
 		}
 
 		clientes.save(cliente);
-		attributes.addFlashAttribute("mensagen", "Cliente salvo com sucesso");
+		attributes.addFlashAttribute("mensagen", "Cliente cadastrado com sucesso");
 		return "redirect:/clientes/novo";
 	}
 	
@@ -59,8 +59,9 @@ public class ClienteController {
 	}
 	
 	@RequestMapping(value="{id}", method = RequestMethod.DELETE)
-	public String excluir(@PathVariable Long id){
+	public String excluir(@PathVariable Long id, RedirectAttributes attributes){
 		clientes.delete(id);
+		attributes.addFlashAttribute("mensagen", "Cliente excluido com sucesso");
 		return "redirect:/clientes";
 	}
 	
