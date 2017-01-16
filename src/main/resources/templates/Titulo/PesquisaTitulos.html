@@ -49,7 +49,7 @@
 								class="glyphicon glyphicon-ok"></span>
 						</a> 
 						<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModalTitulo" 
-						th:attr="data-codigo=${titulo.id}, data-descricao=${titulo.descricao}"> 
+						th:attr="data-id=${titulo.id}, data-descricao=${titulo.descricao}"> 
 						<span class="glyphicon glyphicon-remove"></span>
 						</a></td>
 					</tr>
@@ -61,7 +61,7 @@
 			</table>
 		</div>
 
-		<div layout:include="/Padrao/ConfirmacaoExclusao"></div>
+		<div layout:include="/Titulo/ConfirmacaoExclusaoTitulo"></div>
 
 	</div>
 </section>

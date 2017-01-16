@@ -56,7 +56,12 @@ public class ClienteController {
 		ModelAndView mv = new ModelAndView("Cliente/Cadastrocliente");
 		mv.addObject(cliente);
 		return mv;
-		
+	}
+	
+	@RequestMapping(value="{id}", method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long id){
+		clientes.delete(id);
+		return "redirect:/clientes";
 	}
 	
 
