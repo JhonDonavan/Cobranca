@@ -1,3 +1,7 @@
+$(function(){
+	$('[rel="tooltip"]').tooltip();
+})
+
 //exclusao de titulos
 $('#confirmacaoExclusaoModalTitulo').on('show.bs.modal', function(event) {
 
@@ -45,3 +49,6 @@ $('#confirmacaoExclusaoModalCliente').on('show.bs.modal', function(event) {
 					'tem certeza que deseja ecluir o cliente <strong>'
 							+ nomeCliente + '<strong>?');
 		});
+
+
+
