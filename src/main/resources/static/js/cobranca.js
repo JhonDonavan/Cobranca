@@ -1,7 +1,3 @@
-$(function(){
-	$('[rel="tooltip"]').tooltip();
-})
-
 //exclusao de titulos
 $('#confirmacaoExclusaoModalTitulo').on('show.bs.modal', function(event) {
 
@@ -38,7 +34,7 @@ $('#confirmacaoExclusaoModalCliente').on('show.bs.modal', function(event) {
 			var form = modal.find('form');
 
 			var action = form.data('url-base');
-
+ 
 			if (!action.endsWith('/')) {
 				action += '/';
 			}
@@ -49,6 +45,11 @@ $('#confirmacaoExclusaoModalCliente').on('show.bs.modal', function(event) {
 					'tem certeza que deseja ecluir o cliente <strong>'
 							+ nomeCliente + '<strong>?');
 		});
+
+$(function(){
+	$('[rel="tooltip"]').tooltip();
+	$('.js-maskMoney').maskMoney({decimal: ',', thousands: '.', allowZero: true});
+})
 
 
 

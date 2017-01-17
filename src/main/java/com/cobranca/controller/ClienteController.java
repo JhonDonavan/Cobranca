@@ -41,7 +41,7 @@ public class ClienteController {
 			attributes.addFlashAttribute("mensagen", "Cliente cadastrado com sucesso");
 			return "redirect:/clientes/novo";
 		} catch (DataIntegrityViolationException e) {
-			erros.rejectValue("dataVencimento", null, "Formato de data invalido");
+			erros.rejectValue("dataNascimento", null, "Formato de data invalido");
 			return "Cliente/CadastroCliente";
 		}
 	}
