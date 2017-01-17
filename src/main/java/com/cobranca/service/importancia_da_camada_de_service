@@ -1,0 +1,10 @@
+importancia da camada Service
+
+O camada service é utilizada para executar outras tarefas que nao é do objetivo do controller.
+Exemplo:
+
+Ao salvar um cliente novo, ´é ermitido uma email ou executado uma tarefa em outro sistema,
+
+O exemplo acima deve ser executado no service
+
+O controle apenas recebe a requisição e trata e envia de volta para view.
