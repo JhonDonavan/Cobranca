@@ -3,6 +3,7 @@ package com.cobranca.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
@@ -35,9 +36,14 @@ public class ClienteController {
 			return "Cliente/CadastroCliente";
 		}
 
-		clientes.save(cliente);
-		attributes.addFlashAttribute("mensagen", "Cliente cadastrado com sucesso");
-		return "redirect:/clientes/novo";
+		try {
+			clientes.save(cliente);
+			attributes.addFlashAttribute("mensagen", "Cliente cadastrado com sucesso");
+			return "redirect:/clientes/novo";
+		} catch (DataIntegrityViolationException e) {
+			erros.rejectValue("dataVencimento", null, "Formato de data invalido");
+			return "Cliente/CadastroCliente";
+		}
 	}
 	
 	@RequestMapping

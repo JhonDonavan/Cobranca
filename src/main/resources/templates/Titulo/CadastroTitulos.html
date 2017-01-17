@@ -46,7 +46,9 @@
 						de vencimento</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" id="dataVencimento"
-							th:field="*{dataVencimento}" />
+							th:field="*{dataVencimento}"  autocomplete="off"
+							data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="pt-BR"
+							data-date-autoclose="true" data-date-today-highlight="true"/>
 					</div>
 				</div>
 
