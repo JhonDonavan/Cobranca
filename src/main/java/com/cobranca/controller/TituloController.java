@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -75,6 +76,11 @@ public class TituloController {
 		attributes.addFlashAttribute("mensagen", "Titulo excluido com sucesso");
 		return "redirect:/titulos";
 	}
+	
+	@RequestMapping(value = "/{id}/receber", method = RequestMethod.PUT)
+	public @ResponseBody String receber(@PathVariable Long id) {
+		return tituloService.receber(id);
+	}	
 
 	// retorna uma lista de opçaoes cadastradas na classe ENUM StatusTitulo para
 	// preenchimento dinamico do campo status na tela Cadastro de titulos

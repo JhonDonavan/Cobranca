@@ -1,5 +1,7 @@
 //exclusao de titulos
-$('#confirmacaoExclusaoModalTitulo').on('show.bs.modal', function(event) {
+$('#confirmacaoExclusaoModalTitulo').on(
+		'show.bs.modal',
+		function(event) {
 
 			var button = $(event.relatedTarget);
 
@@ -21,7 +23,9 @@ $('#confirmacaoExclusaoModalTitulo').on('show.bs.modal', function(event) {
 		});
 
 // exclusao de clientes
-$('#confirmacaoExclusaoModalCliente').on('show.bs.modal', function(event) {
+$('#confirmacaoExclusaoModalCliente').on(
+		'show.bs.modal',
+		function(event) {
 
 			var button = $(event.relatedTarget);
 
@@ -34,7 +38,7 @@ $('#confirmacaoExclusaoModalCliente').on('show.bs.modal', function(event) {
 			var form = modal.find('form');
 
 			var action = form.data('url-base');
- 
+
 			if (!action.endsWith('/')) {
 				action += '/';
 			}
@@ -46,10 +50,36 @@ $('#confirmacaoExclusaoModalCliente').on('show.bs.modal', function(event) {
 							+ nomeCliente + '<strong>?');
 		});
 
-$(function(){
+$(function() {
 	$('[rel="tooltip"]').tooltip();
-	$('.js-maskMoney').maskMoney({decimal: ',', thousands: '.', allowZero: true});
+	$('.js-maskMoney').maskMoney({
+		decimal : ',',
+		thousands : '.',
+		allowZero : true
+	});
+
+	$('.js-atualizar-status').on('click', function(event) {
+		event.preventDefault();
+
+		var botaoReceber = $(event.currentTarget);
+		var urlReceber = botaoReceber.attr('href');
+		
+		var response = $.ajax({
+			url : urlReceber,
+			method : 'PUT'
+		});
+
+		response.done(function(e) {
+			
+			var codigoTitulo = botaoReceber.data('id');
+			$('[data-role=' + codigoTitulo + ']').html('<span class="label label-success">' + e +'<span>');
+			botaoReceber.hide();
+		});
+
+		response.fail(function(e) {
+			console.log(e);
+			alert('Erro ao receber cobrança');
+		});
+
+	});
 })
-
-
-
