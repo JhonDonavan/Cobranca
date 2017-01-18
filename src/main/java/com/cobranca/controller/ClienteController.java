@@ -7,6 +7,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,8 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cobranca.model.Cliente;
 import com.cobranca.repositorio.Clientes;
+import com.cobranca.repositorio.filter.ClienteFilter;
 import com.cobranca.service.ClienteService;
-import com.cobranca.service.TituloService;
 
 @Controller
 @RequestMapping("/clientes")
@@ -52,8 +53,8 @@ public class ClienteController {
 	}
 	
 	@RequestMapping
-	public ModelAndView pesquisar(){
-		List<Cliente> todosClientes = clientes.findAll();
+	public ModelAndView pesquisar(@ModelAttribute("filtro") ClienteFilter filtro){
+		List<Cliente> todosClientes = clienteService.filtrarCliente(filtro);
 		ModelAndView mv = new ModelAndView("Cliente/PesquisaClientes");
 		mv.addObject("clientes", todosClientes);
 		return mv;
