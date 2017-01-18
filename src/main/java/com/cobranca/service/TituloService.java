@@ -1,11 +1,14 @@
 package com.cobranca.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cobranca.model.StatusTitulo;
 import com.cobranca.model.Titulo;
 import com.cobranca.repositorio.Titulos;
+import com.cobranca.repositorio.filter.TituloFilter;
 
 @Service
 public class TituloService {
@@ -27,5 +30,10 @@ public class TituloService {
 		titulos.save(titulo);
 		
 		return StatusTitulo.RECEBIDO.getDescricao();
+	}
+	
+	public List<Titulo> filtrar(TituloFilter filtro){
+		String descricao = filtro.getDescricao() == null ? "%" : filtro.getDescricao();	
+		return titulos.findByDescricaoContaining(descricao);
 	}
 }
