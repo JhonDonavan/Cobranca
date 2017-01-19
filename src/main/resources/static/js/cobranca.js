@@ -50,36 +50,51 @@ $('#confirmacaoExclusaoModalCliente').on(
 							+ nomeCliente + '<strong>?');
 		});
 
+// tudo dentro deste Function é carregado assim que a pagina esta carregada.
 $(function() {
+	// mmensagem para icones com mause sobre icones
 	$('[rel="tooltip"]').tooltip();
+
+	// MaskMoney, mascara para campos de valor(moeda)
 	$('.js-maskMoney').maskMoney({
 		decimal : ',',
 		thousands : '.',
 		allowZero : true
 	});
 
-	$('.js-atualizar-status').on('click', function(event) {
-		event.preventDefault();
+	// AJAX para alterar status do titulo
+	$('.js-atualizar-status').on(
+			'click',
+			function(event) {
+				event.preventDefault();
 
-		var botaoReceber = $(event.currentTarget);
-		var urlReceber = botaoReceber.attr('href');
-		
-		var response = $.ajax({
-			url : urlReceber,
-			method : 'PUT'
-		});
+				var botaoReceber = $(event.currentTarget);
+				var urlReceber = botaoReceber.attr('href');
 
-		response.done(function(e) {
-			
-			var codigoTitulo = botaoReceber.data('id');
-			$('[data-role=' + codigoTitulo + ']').html('<span class="label label-success">' + e +'<span>');
-			botaoReceber.hide();
-		});
+				var response = $.ajax({
+					url : urlReceber,
+					method : 'PUT'
+				});
 
-		response.fail(function(e) {
-			console.log(e);
-			alert('Erro ao receber cobrança');
-		});
+				response.done(function(e) {
 
-	});
+					var codigoTitulo = botaoReceber.data('id');
+					$('[data-role=' + codigoTitulo + ']')
+							.html(
+									'<span class="label label-success">' + e
+											+ '<span>');
+					botaoReceber.hide();
+				});
+
+				response.fail(function(e) {
+					console.log(e);
+					alert('Erro ao receber cobrança');
+				});
+
+			});
 })
+
+//Inicializa dataTable
+$(document).ready(function() {
+	$('#dataTable').dataTable();
+});
