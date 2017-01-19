@@ -1,10 +1,9 @@
 /*	tela grande  */
-@media ( min-width : 768px){
+@media ( min-width : 768px) {
 	.panel-default {
 		margin-left: 10px;
 		margin-right: 10px;
 	}
-	
 	.alert {
 		margin-left: 10px;
 		margin-right: 10px;
@@ -16,18 +15,20 @@
 }
 
 /*jd --> classe padrao para alteração onde sep recisa criar uma nova classe para ocnseguir ajustes  */
-.jd-link-panel{
+.jd-link-panel {
 	float: right;
 	padding: 0px;
 }
 
-.jd-titulo-panel{
+.jd-titulo-panel {
 	float: left;
 	padding-top: 2px;
 }
 
-.jd-nav-lateral-col01{
+.jd-nav-lateral-col01 {
 	padding-right: 15px;
-	}
+}
 
-	
+#dataTable_wrapper {
+	width: 99%;
+}
