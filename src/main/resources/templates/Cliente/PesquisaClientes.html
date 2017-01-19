@@ -22,24 +22,25 @@
 
 
 		<div class="panel-body">
-		
-		<form method="GET" class="form-horizontal" action="/clientes" th:object="${filtro}">
+
+			<form method="GET" class="form-horizontal" action="/clientes"
+				th:object="${filtro}">
 				<div class="form-group">
 					<div class="col-sm-4">
 						<div class="input-group">
 							<input class="form-control"
 								placeholder="Qual título voce está procurando?"
-								autofocus="autofocus" th:field="*{nome}" />
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-default">
-										<i class="glyphicon glyphicon-search"></i>
-									</button>
-								</span>
+								autofocus="autofocus" th:field="*{nome}" /> <span
+								class="input-group-btn">
+								<button type="submit" class="btn btn-default">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</span>
 						</div>
 					</div>
 				</div>
 			</form>
-		
+
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
@@ -60,26 +61,23 @@
 						<td class="text-right" th:text="${{cliente.endereco}}|"></td>
 						<td class="text-right" th:text="${{cliente.cel}}|"></td>
 						<td class="text-right" th:text="${{cliente.tel}}|"></td>
-						<td class="text-center">
-							<a class="btn btn-link btn-xs"
-								th:href="@{/clientes/{id}(id=${cliente.id})}" 
-								title="Editar" rel="tooltip" data-placement="top"> 
-									<span class="glyphicon glyphicon-pencil"></span>
-							</a> 
-							<a class="btn btn-link btn-xs" data-toggle="modal"
-								data-target="#confirmacaoExclusaoModalCliente"
-								th:attr="data-id=${cliente.id}, data-nome=${cliente.nome}" 
-								title="Excluir" rel="tooltip" data-placement="top"> 
-									<span class="glyphicon glyphicon-remove"></span>
-							</a>
-						</td>
+						<td class="text-center"><a class="btn btn-link btn-xs"
+							th:href="@{/clientes/{id}(id=${cliente.id})}" title="Editar"
+							rel="tooltip" data-placement="top"> <span
+								class="glyphicon glyphicon-pencil"></span>
+						</a> <a class="btn btn-link btn-xs" data-toggle="modal"
+							data-target="#confirmacaoExclusaoModalCliente"
+							th:attr="data-id=${cliente.id}, data-nome=${cliente.nome}"
+							title="Excluir" rel="tooltip" data-placement="top"> <span
+								class="glyphicon glyphicon-remove"></span>
+						</a></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-
-		<div layout:include="/Cliente/confirmacaoExclusaoCliente"></div>
 	</div>
+
+	<div layout:include="/Cliente/confirmacaoExclusaoCliente"></div>
 </section>
 
 </html>

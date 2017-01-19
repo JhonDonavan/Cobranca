@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cobranca.model.Cliente;
-import com.cobranca.repositorio.Clientes;
 import com.cobranca.repositorio.filter.ClienteFilter;
 import com.cobranca.service.ClienteService;
 
@@ -23,8 +22,6 @@ import com.cobranca.service.ClienteService;
 @RequestMapping("/clientes")
 public class ClienteController {
 
-	@Autowired
-	private Clientes clientes;
 	
 	@Autowired
 	private ClienteService clienteService;

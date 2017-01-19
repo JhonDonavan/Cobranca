@@ -4,40 +4,47 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8"></meta>
-<title>Cobrança</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
 
+<title>Cobrança</title>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="/css/bootstrap-datepicker.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 <body>
 
 	<header layout:include="Padrao/Cabecalho"></header>
 
-	
-		<div class="col-sm-1 jd-nav-lateral-col01">
-			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation"><a class="btn btn-default" href="/">HOME</a></li>
-				<li role="presentation"><a class="btn btn-default"
-					href="/titulos">TÍTULOS</a></li>
-				<li role="presentation"><a class="btn btn-default" href="/clientes">CLIENTES</a></li>
-			</ul>
-		</div>
 
-		<div class="col-sm-11 jd-nav-lateral-col11">
-			<section layout:fragment="conteudo">
-				<p>Conteudo principal</p>
-			</section>
-		</div>
-	
+
+	<div class="col-sm-1 jd-nav-lateral-col01">
+		<ul class="nav nav-pills nav-stacked">
+			<li role="presentation"><a class="btn btn-default" href="/">HOME</a></li>
+			<li role="presentation"><a class="btn btn-default"
+				href="/titulos">TÍTULOS</a></li>
+			<li role="presentation"><a class="btn btn-default"
+				href="/clientes">CLIENTES</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-11 jd-nav-lateral-col11">
+		<section layout:fragment="conteudo">
+			<p>Conteudo principal</p>
+		</section>
+	</div>
+
 
 
 	<script src="/js/jquery-3.1.1.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/bootstrap-datepicker.min.js"></script>
 	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
-	<script src="/js/jquery.maskMoney.min.js"></script> 
+	<script src="/js/jquery.maskMoney.min.js"></script>
 	<script src="/js/cobranca.js"></script>
+
+
 </body>
 
 </html>

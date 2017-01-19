@@ -1,15 +1,18 @@
+/*	tela grande  */
+@media ( min-width : 768px){
+	.panel-default {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	.alert {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
 .navbar-brand {
 	padding-top: 12px;
-}
-
-.panel-default {
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-.alert {
-	margin-left: 10px;
-	margin-right: 10px;
 }
 
 /*jd --> classe padrao para alteração onde sep recisa criar uma nova classe para ocnseguir ajustes  */
@@ -24,10 +27,7 @@
 }
 
 .jd-nav-lateral-col01{
-	padding-right: 5px;
+	padding-right: 15px;
 	}
-.jd-nav-lateral-col11{
-	padding-left: 5px;
-	
-}
+
 	
