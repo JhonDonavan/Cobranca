@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css"
 	href="/css/bootstrap-datepicker.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css" />
 </head>
 <body>
 
@@ -43,7 +44,12 @@
 	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
 	<script src="/js/jquery.maskMoney.min.js"></script>
 	<script src="/js/cobranca.js"></script>
-
+	<script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+			$(document).ready(function() {
+				$('#table_id').dataTable();
+			});
+		</script>
 
 </body>
 
