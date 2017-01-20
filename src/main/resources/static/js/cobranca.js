@@ -98,7 +98,7 @@ $(function() {
 			"sLoadingRecords" : "Carregando...",
 			"sProcessing" : "Processando...",
 			"sZeroRecords" : "Nenhum registro encontrado",
-			"sSearch" : "Pesquisar",
+			"sSearch" : "Pesquisa avançada:",
 			"oPaginate" : {
 				"sNext" : "Próximo",
 				"sPrevious" : "Anterior",
@@ -112,4 +112,10 @@ $(function() {
 		}
 	});
 })
+
+//mascaras para campo input
+jQuery(function($){
+		       $("#tel").mask("(999) 9999-9999");
+		       $("#cel").mask("(999) 99999-9999");
+		});
 
