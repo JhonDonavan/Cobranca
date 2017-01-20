@@ -66,17 +66,13 @@ $(function() {
 			'click',
 			function(event) {
 				event.preventDefault();
-
 				var botaoReceber = $(event.currentTarget);
 				var urlReceber = botaoReceber.attr('href');
-
 				var response = $.ajax({
 					url : urlReceber,
 					method : 'PUT'
 				});
-
 				response.done(function(e) {
-
 					var codigoTitulo = botaoReceber.data('id');
 					$('[data-role=' + codigoTitulo + ']')
 							.html(
@@ -84,41 +80,13 @@ $(function() {
 											+ '<span>');
 					botaoReceber.hide();
 				});
-
 				response.fail(function(e) {
 					console.log(e);
 					alert('Erro ao receber cobrança');
 				});
-
 			});
-})
 
-$(document).ready(function() {
-
-	
-	$(function() {
-        $.mask.definitions['~'] = "[+-]";
-        $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy",completed:function(){alert("completed!");}});
-        $(".phone").mask("(999) 999-9999");
-        $(".cel").mask("(999) 99999-9999");
-        $("#phoneExt").mask("(999) 999-9999? x99999");
-        $("#iphone").mask("+33 999 999 999");
-        $("#tin").mask("99-9999999");
-        $("#ssn").mask("999-99-9999");
-        $("#product").mask("a*-999-a999", { placeholder: " " });
-        $("#eyescript").mask("~9.99 ~9.99 999");
-        $("#po").mask("PO: aaa-999-***");
-        $("#pct").mask("99%");
-        $("#phoneAutoclearFalse").mask("(999) 999-9999", { autoclear: false, completed:function(){alert("completed autoclear!");} });
-        $("#phoneExtAutoclearFalse").mask("(999) 999-9999? x99999", { autoclear: false });
-        $("input").blur(function() {
-            $("#info").html("Unmasked value: " + $(this).mask());
-        }).dblclick(function() {
-            $(this).unmask();
-        });
-    });
-
-	$('#dataTable').dataTable({
+	$("#dataTable").dataTable({
 		"language" : {
 			"sEmptyTable" : "Nenhum registro encontrado",
 			"sInfo" : "Mostrando de _START_ até _END_ de _TOTAL_ registros",
@@ -141,9 +109,7 @@ $(document).ready(function() {
 				"sSortAscending" : ": Ordenar colunas de forma ascendente",
 				"sSortDescending" : ": Ordenar colunas de forma descendente"
 			}
-
 		}
 	});
-
-});
+})
 
