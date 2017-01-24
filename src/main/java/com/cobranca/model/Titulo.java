@@ -26,8 +26,8 @@ public class Titulo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty
 	private String cliente;
-	
 	
 	@NotEmpty(message="Campo descrição é obrigatória!")
 	@Size(max=70, message="O campo descrição nao pode conter mais de 70 caracteres")
@@ -55,8 +55,6 @@ public class Titulo {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	
 
 	public String getCliente() {
 		return cliente;
@@ -126,7 +124,5 @@ public class Titulo {
 			return false;
 		return true;
 	}
-	
-	
 
 }
