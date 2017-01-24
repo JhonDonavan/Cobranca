@@ -71,7 +71,7 @@ $(function() {
 				var response = $.ajax({
 					url : urlReceber,
 					method : 'PUT'
-				});
+				}); 
 				response.done(function(e) {
 					var codigoTitulo = botaoReceber.data('id');
 					$('[data-role=' + codigoTitulo + ']')
