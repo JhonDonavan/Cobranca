@@ -45,9 +45,10 @@
 						<tr>
 							<th class="text-center col-md-1">#</th>
 							<th>Descrição</th>
-							<th class="text-center col-md-3">Data de vencimento</th>
+							<th class="text-center col-md-2">Cliente</th>
+							<th class="text-center col-md-2">Data de vencimento</th>
 							<th class="text-center col-md-2">Valor</th>
-							<th class="text-center col-md-2">status</th>
+							<th class="text-center col-md-1">status</th>
 							<th class="text-center col-md-1">Funções</th>
 						</tr>
 					</thead>
@@ -55,6 +56,7 @@
 						<tr th:each="titulo : ${titulos}">
 							<td class="text-center" th:text="${titulo.id}">1</td>
 							<td th:text="${titulo.descricao}"></td>
+							<td th:text="${titulo.cliente}"></td>
 							<td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
 							<td class="text-right" th:text="|R$ ${{titulo.valor}}|"></td>
 							<td class="text-center" th:attr="data-role=${titulo.id}"><span
