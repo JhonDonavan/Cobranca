@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
@@ -11,10 +12,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cobranca.model.Cliente;
+import com.cobranca.repositorio.Clientes;
 import com.cobranca.repositorio.filter.ClienteFilter;
 import com.cobranca.service.ClienteService;
 
@@ -25,6 +28,8 @@ public class ClienteController {
 	
 	@Autowired
 	private ClienteService clienteService;
+	@Autowired
+	private Clientes clientes;
 	
 	@RequestMapping("/novo")
 	public ModelAndView novo() {
@@ -57,6 +62,11 @@ public class ClienteController {
 		return mv;
 	}
 	
+	@RequestMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
+	public @ResponseBody List<Cliente> pesquisar(String nome){
+		return clientes.findByNomeStartingWithIgnoreCase(nome);
+	} 
+	
 	//OBS: O spring entende que se passar uma variavel ele interpreta que voce quer localizar o objeto
 	//sendo assim, não ha necessidade desta forma codificada abaixo de usar FindAll do JPA.
 	//Passando  "id" e declarando o objeto ele faz automaticamente
@@ -73,6 +83,8 @@ public class ClienteController {
 		attributes.addFlashAttribute("mensagen", "Cliente excluido com sucesso");
 		return "redirect:/clientes";
 	}
+	
+	
 	
 
 }

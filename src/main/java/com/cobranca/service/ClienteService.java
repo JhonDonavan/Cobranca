@@ -27,11 +27,4 @@ public class ClienteService {
 		String nome = filtro.getNome() == null ? "%" : filtro.getNome();
 		return clientes.findByNomeContaining(nome);
 	}
-
-	
-	
-	
-	
-	
-	
 }
